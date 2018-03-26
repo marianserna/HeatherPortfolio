@@ -1,13 +1,39 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const IndexPage = () => (
-  <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </div>
-)
+import ProjectTile from '../components/ProjectTile'
 
-export default IndexPage
+export default ({ data }) => {
+  console.log(data)
+  return (
+    <div>
+      {data.allContentfulProject.edges.map(edge => (
+        <ProjectTile project={edge.node} key={edge.node.id} />
+      ))}
+      <Link to="/page-2/">Go to page 2</Link>
+    </div>
+  )
+}
+
+export const query = graphql`
+  query ProjectsQuery {
+    allContentfulProject {
+      edges {
+        node {
+          id
+          name
+          image {
+            file {
+              url
+              fileName
+              contentType
+            }
+          }
+          description {
+            description
+          }
+        }
+      }
+    }
+  }
+`
