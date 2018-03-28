@@ -34,7 +34,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     `).then(result => {
       // console.log(JSON.stringify(result, null, 4))
 
-      result.data.allContentfulProject.edges.forEach(({ node }) => {
+      result.data.allContentfulProject.edges.forEach(({ node }, i) => {
         createPage({
           path: node.name
             .replace(/\s+/g, '-')
