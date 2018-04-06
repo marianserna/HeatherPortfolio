@@ -21,6 +21,10 @@ const TemplateWrapper = ({ children }) => (
         href="https://fonts.googleapis.com/css?family=Fjalla+One|Roboto:300"
         rel="stylesheet"
       />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+      />
     </Helmet>
     <SideBar />
     <div
