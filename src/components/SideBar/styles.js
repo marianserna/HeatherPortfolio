@@ -8,23 +8,35 @@ const Aside = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
+  background: rgba(190, 177, 180, 0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 `
 
 const Name = styled.h1`
   font-size: 4rem;
   font-family: 'Fjalla One', sans-serif;
   text-align: center;
+  padding-bottom: 5px;
+  color: #595959;
+`
+
+const Line = styled.hr`
+  border: 0.5px solid #beb1b4;
+  width: 80%;
 `
 
 const Lastname = styled.h2`
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-family: 'Roboto', sans-serif;
-  text-align: center;
+  text-align: right;
+  padding-right: 20%;
+  margin-bottom: 15px;
+  color: #595959;
 `
 
 const Navigation = styled.nav`
-  font-size: 1.5rem;
+  margin-top: 15px;
+  font-size: 1rem;
   font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: center;
@@ -41,6 +53,14 @@ const Listitem = styled.li`
 
 const Navlink = styled(Link)`
   text-decoration: none;
+  color: #e0474c;
+  padding: 5px;
+  transition: all 1s ease;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
 `
 
-export { Aside, Name, Lastname, Navigation, Navlist, Listitem, Navlink }
+export { Aside, Name, Line, Lastname, Navigation, Navlist, Listitem, Navlink }

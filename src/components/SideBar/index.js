@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 import {
   Aside,
   Name,
+  Line,
   Lastname,
   Navigation,
   Navlist,
@@ -15,17 +16,17 @@ const SideBar = () => (
   <Aside>
     <Name>HEATHER K.</Name>
     <Lastname>Halliday</Lastname>
-    <hr />
+    <Line />
     <Navigation>
       <Navlist>
         <Listitem>
-          <Navlink to="/">home</Navlink>
+          <Navlink to="/">HOME</Navlink>
         </Listitem>
         <Listitem>
-          <Navlink to="/about">about</Navlink>
+          <Navlink to="/about">ABOUT</Navlink>
         </Listitem>
         <Listitem>
-          <Navlink to="/contact">contact</Navlink>
+          <Navlink to="/contact">CONTACT</Navlink>
         </Listitem>
       </Navlist>
     </Navigation>

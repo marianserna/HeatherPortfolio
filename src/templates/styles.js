@@ -8,9 +8,11 @@ const LinkContainer = styled.div`
 
 const ProjectImage = styled.img`
   max-width: 80%;
-  max-height: 75vh;
+  max-height: 65vh;
   display: block;
   margin: 50px auto;
+  margin-bottom: 70px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 `
 
 const ProjectTitle = styled.h1`
@@ -25,7 +27,6 @@ const Description = styled.p`
   font-family: 'Roboto', sans-serif;
   line-height: 2.8rem;
   padding: 0 10%;
-  /* padding-top: 0; */
   margin: 50px;
 `
 
@@ -33,8 +34,15 @@ const ProjectLink = styled(Link)`
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
   margin: 20px;
-  color: red;
+  color: #e0474c;
   font-weight: bolder;
+  padding: 5px;
+  transition: all 1s ease;
+
+  &:hover {
+    background-color: #212121;
+    color: #fff;
+  }
 `
 
 export { LinkContainer, ProjectImage, ProjectTitle, Description, ProjectLink }

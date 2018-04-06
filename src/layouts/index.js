@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import './reset.css'
-import './index.css'
+import './generic/reset.css'
+import './generic/index.css'
 
 import SideBar from '../components/SideBar'
 import { OuterContainer } from './styles'
