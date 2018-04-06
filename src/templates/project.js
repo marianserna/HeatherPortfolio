@@ -9,6 +9,14 @@ import {
 } from './styles'
 
 class Project extends React.Component {
+  componentDidMount() {
+    const nextImage = new Image()
+    nextImage.src = this.props.pathContext.nextImage
+
+    const prevImage = new Image()
+    prevImage.src = this.props.pathContext.prevImage
+  }
+
   render() {
     const { project, next, prev } = this.props.pathContext
     const paras = project.description.description.split('\n')
