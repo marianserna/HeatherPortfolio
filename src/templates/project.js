@@ -1,15 +1,31 @@
 import React from 'react'
 
-const Project = ({ pathContext }) => {
-  const project = pathContext
+import {
+  LinkContainer,
+  ProjectImage,
+  ProjectTitle,
+  Description,
+  ProjectLink,
+} from './styles'
 
-  return (
-    <div>
-      <h2>{project.name}</h2>
-      <img src={project.image.file.url} />
-      <p>{project.description.description}</p>
-    </div>
-  )
+class Project extends React.Component {
+  render() {
+    const { project, next, prev } = this.props.pathContext
+    const paras = project.description.description.split('\n')
+
+    return (
+      <div>
+        <LinkContainer>
+          <ProjectLink to={prev}>PREV</ProjectLink>
+          <ProjectLink to={next}>NEXT</ProjectLink>
+        </LinkContainer>
+
+        <ProjectImage src={project.image.file.url} />
+        <ProjectTitle>{project.name}</ProjectTitle>
+        {paras.map((para, i) => <Description key={i}>{para}</Description>)}
+      </div>
+    )
+  }
 }
 
 export default Project

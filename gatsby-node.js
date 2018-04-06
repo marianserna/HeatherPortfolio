@@ -1,4 +1,5 @@
 const path = require('path')
+const { slugify } = require('./src/utils')
 /**
  * Implement Gatsby's Node APIs in this file.
  *
@@ -33,15 +34,25 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       }
     `).then(result => {
       // console.log(JSON.stringify(result, null, 4))
+      const projects = result.data.allContentfulProject.edges
 
-      result.data.allContentfulProject.edges.forEach(({ node }, i) => {
+      projects.forEach(({ node }, i) => {
+        const prevProject =
+          i === 0 ? projects[projects.length - 1] : projects[i - 1]
+
+        const nextProject =
+          i === projects.length - 1 ? projects[0] : projects[i + 1]
+
         createPage({
-          path: node.name
-            .replace(/\s+/g, '-')
-            .toLowerCase()
-            .replace(/[^a-z-]/g, ''),
+          path: slugify(node.name),
           component: path.resolve('./src/templates/project.js'),
-          context: node,
+          context: {
+            project: node,
+            next: slugify(nextProject.node.name),
+            nextImage: nextProject.node.image.file.url,
+            prev: slugify(prevProject.node.name),
+            prevImage: prevProject.node.image.file.url,
+          },
         })
       })
       resolve()

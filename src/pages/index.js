@@ -1,16 +1,16 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import './index.css'
 
 import ProjectTile from '../components/ProjectTile'
 
 export default ({ data }) => {
-  console.log(data)
+  // console.log(data)
   return (
-    <div>
+    <div className="grid">
       {data.allContentfulProject.edges.map(edge => (
         <ProjectTile project={edge.node} key={edge.node.id} />
       ))}
-      <Link to="/page-2/">Go to page 2</Link>
     </div>
   )
 }
