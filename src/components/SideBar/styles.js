@@ -17,7 +17,7 @@ const Name = styled.h1`
   font-family: 'Fjalla One', sans-serif;
   text-align: center;
   padding-bottom: 5px;
-  color: #595959;
+  color: #212121;
 `
 
 const Line = styled.hr`
@@ -31,7 +31,7 @@ const Lastname = styled.h2`
   text-align: right;
   padding-right: 20%;
   margin-bottom: 15px;
-  color: #595959;
+  color: #212121;
 `
 
 const Navigation = styled.nav`
